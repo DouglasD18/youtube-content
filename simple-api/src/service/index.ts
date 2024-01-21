@@ -15,4 +15,9 @@ export class BooksServices {
     await this.model.add(book);
   }
 
+  async list() {
+    const books = await this.model.list();
+    return books;
+  }
+
 }
