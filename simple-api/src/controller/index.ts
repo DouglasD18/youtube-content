@@ -46,4 +46,20 @@ export class BooksController {
       return res.status(500).json(error);
     }
   }
+
+  async delete(req: Request, res: Response) {
+    const { title } = req.params;
+
+    try {
+      await this.services.delete(title);
+
+      return res.status(204).send();
+    } catch (error) {
+      if (error instanceof Error && error.message === "Book not found") {
+        return res.status(404).send(error.message);
+      }
+
+      return res.status(500).json(error);
+    }
+  }
 }
