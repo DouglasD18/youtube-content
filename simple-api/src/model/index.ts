@@ -19,4 +19,9 @@ export class BooksModel {
     books.push(book);
     await this.write(books);
   }
+
+  async list() {  
+    const books = await this.read();
+    return books;
+  }
 }
