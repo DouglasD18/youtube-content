@@ -19,6 +19,10 @@ router.get("/books", (request, response) => {
 
 router.put("/books/:title", (request, response) => {
   return controller.update(request, response);
-})
+});
+
+router.delete("/books/:title", (request, response) => {
+  return controller.delete(request, response);
+});
 
 export default router;
