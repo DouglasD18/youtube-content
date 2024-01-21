@@ -20,4 +20,16 @@ export class BooksServices {
     return books;
   }
 
+  async update(title: string, book: any) {
+    const fields = ["author", "title", "price"];
+
+    fields.forEach((field) => { 
+      if (!book[field]) {
+        throw new Error(`Missing field ${field}`);
+      }
+    });
+
+    await this.model.update(title, book);
+  }
+
 }
