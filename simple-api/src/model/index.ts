@@ -35,4 +35,14 @@ export class BooksModel {
     await this.write(books);
   }
 
+  async delete(title: string) {
+    const books = await this.read();
+    const index = books.findIndex((book: Book) => book.title === title);
+    if (index === -1) {
+      throw new Error("Book not found");
+    }
+    books.splice(index, 1);
+    await this.write(books);
+  }
+
 }
