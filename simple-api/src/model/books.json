@@ -1,0 +1,17 @@
+[
+  {
+    "author": "J.R.R. Tolkien",
+    "title": "The Lord of the Rings",
+    "price": 9.99
+  },
+  {
+    "author": "Rick Riordan",
+    "title": "The Lightning Thief",
+    "price": 4.99
+  }, 
+  {
+    "author": "Eduardo Spohr",
+    "title": "A Batalha do Apocalipse",
+    "price": 3.99
+  }
+]
