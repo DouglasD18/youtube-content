@@ -29,4 +29,21 @@ export class BooksController {
       return res.status(500).json(error);
     }
   }
+
+  async update(req: Request, res: Response) {
+    const { title } = req.params;
+    const book = req.body;
+
+    try {
+      await this.services.update(title, book);
+
+      return res.status(200).json(book);
+    } catch (error) {
+      if (error instanceof Error && error.message === "Book not found") {
+        return res.status(404).send(error.message);
+      }
+
+      return res.status(500).json(error);
+    }
+  }
 }
