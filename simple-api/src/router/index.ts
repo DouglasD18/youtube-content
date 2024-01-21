@@ -17,4 +17,8 @@ router.get("/books", (request, response) => {
   return controller.list(request, response);
 });
 
+router.put("/books/:title", (request, response) => {
+  return controller.update(request, response);
+})
+
 export default router;
