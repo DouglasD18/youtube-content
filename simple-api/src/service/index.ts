@@ -32,4 +32,8 @@ export class BooksServices {
     await this.model.update(title, book);
   }
 
+  async delete(title: string) {
+    await this.model.delete(title);
+  }
+
 }
