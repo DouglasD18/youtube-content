@@ -13,4 +13,8 @@ router.post("/books", (request, response) => {
   return controller.add(request, response);
 });
 
+router.get("/books", (request, response) => {
+  return controller.list(request, response);
+});
+
 export default router;
