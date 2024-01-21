@@ -16,7 +16,17 @@ export class BooksController {
         return res.status(400).send(error.message);
       }
 
-      return res.status(500).send(error);
+      return res.status(500).json(error);
+    }
+  }
+
+  async list(_req: Request, res: Response) {
+    try {
+      const books = await this.services.list();
+
+      return res.status(200).json(books);
+    } catch (error) {
+      return res.status(500).json(error);
     }
   }
 }
